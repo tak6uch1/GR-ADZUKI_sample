@@ -25,8 +25,8 @@ void setup()  {
   pinMode(dcMotorPin0, OUTPUT);
   pinMode(dcMotorPin1, OUTPUT);
   // DCモーターを停止（両方に同じ値を入れると停止）
-  digitalWrite(dcMotorPin0, LOW);
-  digitalWrite(dcMotorPin1, LOW);
+  analogWrite(dcMotorPin0, 0);
+  analogWrite(dcMotorPin1, 0);
 }
 
 void loop()  { 
@@ -63,12 +63,10 @@ void loop()  {
   delay(2000);         // 2秒待つ
 
   // DCモーターを3秒間動かす
-  digitalWrite(dcMotorPin0, HIGH);
-  digitalWrite(dcMotorPin1, LOW);
+  analogWrite(dcMotorPin0, 150);
   delay(3000);
   // DCモーターを止める
-  digitalWrite(dcMotorPin0, LOW);
-  digitalWrite(dcMotorPin1, LOW);
+  analogWrite(dcMotorPin0, 0);
 }
 
 
